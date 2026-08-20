@@ -1,0 +1,35 @@
+[project]
+name = "fde"
+version = "0.2.0"
+description = "A resilient Bedrock extraction pipeline: typed models, retries, batching, and a CLI"
+requires-python = ">=3.12"
+dependencies = [
+    "boto3>=1.43",
+    "pydantic[email]>=2.13",
+    "tenacity>=9.1",
+    "typer>=0.27",
+]
+
+# The stubs supply `mypy_boto3_bedrock_runtime`, which bedrock_client.py imports
+# under TYPE_CHECKING. Only a type checker needs it — the code runs without it.
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "boto3-stubs[bedrock-runtime]>=1.43",
+]
+
+# This is the entry point that turns the CLI module into a real `summarize`
+# command. It is generated into your environment's bin/ when you run
+# `pip install -e .` — see the README.
+[project.scripts]
+summarize = "fde.cli:app"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["fde"]
+
+[tool.setuptools.package-data]
+fde = ["py.typed"]
