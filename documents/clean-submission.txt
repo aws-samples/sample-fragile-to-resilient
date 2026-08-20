@@ -1,0 +1,9 @@
+New commercial general liability submission.
+
+Insured: Acme Robotics Inc, contact is founder Dana Okafor, age 41.
+Reach Dana at dana.okafor@acmerobotics.example.
+
+Policy reference: CGL-2026-00817.
+
+Coverage requested: General Liability, with a per-occurrence limit of $1,000,000
+and an aggregate limit of $2,000,000.
